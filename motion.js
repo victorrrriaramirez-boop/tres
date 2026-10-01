@@ -6,3 +6,5 @@ menuToggle.addEventListener('click',()=>{const opening=mobileNav.hidden;mobileNa
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
 addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobileNav.hidden){closeMenu();menuToggle.focus()}});
 addEventListener('resize',()=>{if(innerWidth>700)closeMenu()});
+
+menuToggle.addEventListener("click",()=>document.body.classList.toggle("overlay-open",!mobileNav.hidden));mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>document.body.classList.remove("overlay-open")));addEventListener("keydown",e=>{if(e.key==="Escape")document.body.classList.remove("overlay-open")});addEventListener("resize",()=>document.body.classList.remove("overlay-open"));
